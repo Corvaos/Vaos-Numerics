@@ -2,7 +2,7 @@
 
 ## Overview
 Vaos Numerics is a basic C++ numbers framework designed to optimize various functions specifically for my own projects. 
-This includes the (Vaos-Renderer)[https://github.com/Corvaos/Vaos-Renderer], my (Rutherford Scattering Simulation)[https://github.com/Corvaos/Rutherford], and other projects.  
+This includes the [Vaos-Renderer](https://github.com/Corvaos/Vaos-Renderer), my [Rutherford Scattering Simulation](https://github.com/Corvaos/Rutherford), and other projects.  
 
 ## Capabilities
 Vaos Numerics is capable of:
