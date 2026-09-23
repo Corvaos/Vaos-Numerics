@@ -7,9 +7,9 @@ namespace vaos::numerics
 {
   struct Transform
   {
-    Vector3 translation{};
-    Vector3 rotation{};
-    Vector3 scale{};
+    Vector3<double> translation{};
+    Vector3<double> rotation{};
+    Vector3<double> scale{};
 
     Transform()
       : translation(Vector3(0.0, 0.0, 0.0)),
@@ -18,7 +18,7 @@ namespace vaos::numerics
     {
     }
 
-    explicit Transform(const Vector3& translation)
+    explicit Transform(const Vector3<double>& translation)
       : translation(translation),
         rotation(Vector3(0.0, 0.0, 0.0)),
         scale(Vector3(1.0, 1.0, 1.0))
@@ -26,21 +26,21 @@ namespace vaos::numerics
     }
 
 
-    Transform(const Vector3& translation, const double rot, const double scale)
+    Transform(const Vector3<double>& translation, const double rot, const double scale)
       : translation(translation),
         rotation(Vector3(rot, rot, rot)),
         scale(Vector3(scale, scale, scale))
     {
     }
 
-    Transform(const Vector3& translation, const Vector3& rotation, const double scale)
+    Transform(const Vector3<double>& translation, const Vector3<double>& rotation, const double scale)
       : translation(translation),
         rotation(rotation),
         scale(Vector3(scale, scale, scale))
     {
     }
 
-    Transform(const Vector3& translation, const Vector3& rotation, const Vector3& scale)
+    Transform(const Vector3<double>& translation, const Vector3<double>& rotation, const Vector3<double>& scale)
       : translation(translation),
         rotation(rotation),
         scale(scale)

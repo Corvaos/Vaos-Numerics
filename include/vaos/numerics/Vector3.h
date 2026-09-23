@@ -29,6 +29,14 @@ namespace vaos::numerics
     {
     }
 
+    template <NumericScalar T2>
+    Vector3(const Vector3<T2>& a)
+    {
+      x = a.x;
+      y = a.y;
+      z = a.z;
+    }
+
     // -------------------- RESULT OPERATORS --------------------
     Vector3 operator+(const Vector3& a) const { return {x + a.x, y + a.y, z + a.z}; }
 
@@ -62,7 +70,7 @@ namespace vaos::numerics
 
     void operator/=(const T a)
     {
-      const double b = static_cast<double>(a);
+      const auto b = static_cast<double>(a);
       x /= b;
       y /= b;
       z /= b;
