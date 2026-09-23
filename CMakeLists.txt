@@ -3,7 +3,7 @@ project(VaosNumerics)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_library(VaosNumerics
+add_library(VaosNumerics INTERFACE
         # -------------- DEBUG --------------
 #        examples/main.cpp
 
@@ -17,7 +17,6 @@ add_library(VaosNumerics
         include/vaos/numerics/Random.h
 )
 
-add_library(VaosNumerics INTERFACE)
 add_library(VaosNumerics::VaosNumerics ALIAS VaosNumerics)
 
 target_include_directories(VaosNumerics PUBLIC
