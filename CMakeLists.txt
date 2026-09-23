@@ -26,8 +26,16 @@ set(CMAKE_CXX_STANDARD 20)
 # -------------------------
 add_library(VaosNumerics INTERFACE)
 add_library(VaosNumerics::VaosNumerics ALIAS VaosNumerics)
-
-
+target_sources(VaosNumerics INTERFACE
+        FILE_SET HEADERS
+        BASE_DIRS include
+        FILES
+        include/vaos/numerics/Matrix.h
+        include/vaos/numerics/Transform.h
+        include/vaos/numerics/Vector3.h
+        include/vaos/numerics/Units.h
+        include/vaos/numerics/Random.h
+)
 
 target_include_directories(VaosNumerics INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
