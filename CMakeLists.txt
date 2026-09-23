@@ -29,7 +29,7 @@ add_library(VaosNumerics::VaosNumerics ALIAS VaosNumerics)
 
 
 
-target_include_directories(VaosNumerics PUBLIC
+target_include_directories(VaosNumerics INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
         $<INSTALL_INTERFACE:include>
 )
