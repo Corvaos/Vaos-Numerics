@@ -8,12 +8,12 @@ using namespace vaos::numerics;
 
 int main()
 {
-  Random::seedExplicit(191);
+  // Random::seed(191);
 
-  const Unit<double, 0, -1, 1> velocity = 10 + Random::random(-1, 1);
-  const Unit<double, 1, -2, 1> force = 10 + Random::random(-1, 1);
-
-  std::cout << Vector3((force*velocity).value) << std::endl;
-
+  const Unit<long, 0, -1, 1> velocity = 10 + Random::random(-100, 100);
+  const Unit<long, 1, -2, 1> force = 10 + Random::random( 100);
+{}
+  std::cout << velocity << " " << force << std::endl;
+  std::cout << velocity * force << std::endl;
   return 0;
 }

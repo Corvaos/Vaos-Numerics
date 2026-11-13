@@ -2,15 +2,22 @@
 
 #include <cmath>
 
+#include "Units.h"
+
 namespace vaos::numerics
 {
+  /// @author Corvaos
+  /// @brief A type-enforcer that allows integers, floats, doubles, and longs.
   template <typename type>
   // Restrict possible types to the following:
   concept NumericScalar =
     std::is_same_v<type, int> ||
     std::is_same_v<type, float> ||
-    std::is_same_v<type, double>;
+    std::is_same_v<type, double> ||
+    std::is_same_v<type, long>;
 
+  /// @author Corvaos
+  /// @brief A Three-Dimensional Vector
   template <NumericScalar T>
   struct Vector3
   {
@@ -77,16 +84,36 @@ namespace vaos::numerics
     }
 
     // -------------------- VECTOR OPERATIONS --------------------
+    /// @author Corvaos
+    /// @brief Solves for the unit vector of the original
+    /// @return Unit vector of the original
+    [[nodiscard]] Vector3 normalize() const
+    {
+      Vector3 result = {x, y, z};
+      return result / result.length();
+    }
+
+    // -------------------- SCALAR OPERATIONS --------------------
+    /// @author Corvaos
+    /// @brief Solves for the length using Pythagorean Theorem
+    /// @return Length of the vector
     [[nodiscard]] T length() const
     {
       return static_cast<T>(std::sqrt(static_cast<double>(squareLength())));
     }
 
+    /// @author Corvaos
+    /// @brief Solves for the square of the length using Pythagorean Theorem
+    /// @return Squared length of the vector
     [[nodiscard]] T squareLength() const
     {
       return x * x + y * y + z * z;
     }
 
+    /// @author Corvaos
+    /// @brief Solves for the dot product of the original and another vector
+    /// @param a Other Vector3 to dot product against
+    /// @return Scalar value of dot product
     [[nodiscard]] T dot(const Vector3& a) const
     {
       return x * a.x + y * a.y + z * a.z;

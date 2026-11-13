@@ -106,6 +106,10 @@ namespace vaos::numerics
     }
 
     // -------------------- MATRIX MULTIPLICATION --------------------
+    /// @author Corvaos
+    /// @brief Multiplies two matrices of dimensions M x N and N x O
+    /// @param a Matrix to be multiplied against
+    /// @return Returns the product of the two matrices
     template <size_t z>
     [[nodiscard]] Matrix<T, Rows, z> operator*(const Matrix<T, Columns, z>& a)
     {
@@ -133,6 +137,10 @@ namespace vaos::numerics
 
     // Vector Types
     template <NumericScalar VectorType>
+    /// @author Corvaos
+    /// @brief Creates a new matrix with scale
+    /// @param a Vector3 as the scale in all dimensions
+    /// @return Returns the scaled matrix
     [[nodiscard]] static Matrix<float, 4, 4> scale(const Vector3<VectorType>& a)
     {
       Matrix<float, 4, 4> output;
@@ -143,6 +151,10 @@ namespace vaos::numerics
     }
 
     template <NumericScalar VectorType>
+    /// @author Corvaos
+    /// @brief Creates a new matrix with rotation around the x-axis
+    /// @param a Vector3 as the rotation in all dimensions
+    /// @return Returns the x-rotated matrix
     [[nodiscard]] static Matrix<float, 4, 4> rotateX(const Vector3<VectorType>& a)
     {
       Matrix<float, 4, 4> output;
@@ -158,6 +170,10 @@ namespace vaos::numerics
     }
 
     template <NumericScalar VectorType>
+    /// @author Corvaos
+    /// @brief Creates a new matrix with rotation around the y-axis
+    /// @param a Vector3 as the rotation in all dimensions
+    /// @return Returns the y-rotated matrix
     [[nodiscard]] static Matrix<float, 4, 4> rotateY(const Vector3<VectorType>& a)
     {
       Matrix<float, 4, 4> output;
@@ -173,6 +189,10 @@ namespace vaos::numerics
     }
 
     template <NumericScalar VectorType>
+    /// @author Corvaos
+    /// @brief Creates a new matrix with rotation around the z-axis
+    /// @param a Vector3 as the rotation in all dimensions
+    /// @return Returns the z-rotated matrix
     [[nodiscard]] static Matrix<float, 4, 4> rotateZ(const Vector3<VectorType>& a)
     {
       Matrix<float, 4, 4> output;
@@ -188,12 +208,20 @@ namespace vaos::numerics
     }
 
     template <NumericScalar VectorType>
+    /// @author Corvaos
+    /// @brief Creates a new matrix with rotation around all axes
+    /// @param a Vector3 as the rotation in all dimensions
+    /// @return Returns the rotated matrix
     [[nodiscard]] static Matrix<float, 4, 4> rotate(const Vector3<VectorType>& a)
     {
       return rotateZ(a) * rotateY(a) * rotateX(a);
     }
 
     template <NumericScalar VectorType>
+    /// @author Corvaos
+    /// @brief Creates a new matrix with translation around the origin
+    /// @param a Vector3 as the translation in all dimensions
+    /// @return Returns the translated matrix
     [[nodiscard]] static Matrix<float, 4, 4> translate(const Vector3<VectorType>& a)
     {
       Matrix<float, 4, 4> output;
@@ -203,6 +231,11 @@ namespace vaos::numerics
       return output;
     }
 
+
+    /// @author Corvaos
+    /// @brief Creates a new matrix with projection under a specified aspect
+    /// @param aspect Float as the aspect ratio of the matrix
+    /// @return Returns the projected matrix
     [[nodiscard]] static Matrix<float, 4, 4> projection(const float& aspect)
     {
       Matrix<float, 4, 4> output;
@@ -219,6 +252,9 @@ namespace vaos::numerics
 
     // -------------------- CONVERSION --------------------
 
+    /// @author Corvaos
+    /// @brief Converts the matrix into a std::string
+    /// @return Matrix as a string
     [[nodiscard]] std::string toString() const
     {
       std::string output;
@@ -250,6 +286,11 @@ namespace vaos::numerics
     [[nodiscard]] T& valueAt(const int id) const
     {
       return data[id];
+    }
+
+    [[nodiscard]] std::array<T, Rows*Columns> getData() const
+    {
+      return data;
     }
   };
 

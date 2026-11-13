@@ -5,6 +5,8 @@
 
 namespace vaos::numerics
 {
+  /// @author Corvaos
+  /// @brief Transformations for an object (translation, rotation, and scale)
   struct Transform
   {
     Vector3<double> translation{};
@@ -95,6 +97,9 @@ namespace vaos::numerics
       scale /= a;
     }
 
+    /// @author Corvaos
+    /// @brief Converts the translation into a single matrix object
+    /// @return A 4x4 matrix version of the translation
     [[nodiscard]] Matrix4 matrix() const
     {
       return Matrix4::translate(translation)

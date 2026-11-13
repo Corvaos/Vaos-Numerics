@@ -7,16 +7,12 @@ This includes the [Vaos-Renderer](https://github.com/Corvaos/Vaos-Renderer), my 
 ## Capabilities
 Vaos Numerics is capable of:
 ### Data Types
-* Vector2/Vector3
+* Vector3
 * Matrix (Column Major)
 * Transforms
+* Units
 ### Statistics
 * Random Number Generator
-### Physics
-* Units
-
-## Limitations
-Vaos Numerics (v1) is currently limited by the fact that it is independent: it cannot automate things on its own and purely acts as a handler for various data types and tools.  
 
 ## Technologies
 * C++ 20

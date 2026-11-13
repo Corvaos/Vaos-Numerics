@@ -5,6 +5,12 @@
 
 namespace vaos::numerics
 {
+  /// @author Corvaos
+  /// @brief A unit based on physical properties
+  /// @tparam T the type of value stored
+  /// @param mass the exponent of mass
+  /// @param time the exponent of time
+  /// @param length the exponent of length
   template <typename T, int mass, int time, int length>
   struct Unit
   {
@@ -51,6 +57,9 @@ namespace vaos::numerics
     }
 
     // -------------------- CONVERSIONS --------------------
+    /// @author Corvaos
+    /// @brief Converts the value to a string
+    /// @return Value as a string
     [[nodiscard]] std::string toString() const
     {
       return std::to_string(value);
@@ -63,3 +72,4 @@ namespace vaos::numerics
     }
   };
 }
+
