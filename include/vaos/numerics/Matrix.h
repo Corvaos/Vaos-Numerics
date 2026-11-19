@@ -288,12 +288,12 @@ namespace vaos::numerics
     }
 
     // -------------------- GETTERS --------------------
-    [[nodiscard]] T& valueAt(const int row, const int column) const
+    [[nodiscard]] T& valueAt(const int row, const int column)
     {
       return data[row + Columns * column];
     }
 
-    [[nodiscard]] T& valueAt(const int id) const
+    [[nodiscard]] T& valueAt(const int id)
     {
       return data[id];
     }
