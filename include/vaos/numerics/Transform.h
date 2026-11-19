@@ -98,8 +98,7 @@ namespace vaos::numerics
     }
 
     /// @author Corvaos
-    /// @brief Converts the translation into a single matrix object
-    /// @return A 4x4 matrix version of the translation
+    /// @brief Outputs the translation as a single matrix (4x4) object
     [[nodiscard]] Matrix4 matrix() const
     {
       return Matrix4::translate(translation)

@@ -15,5 +15,9 @@ int main()
 {}
   std::cout << velocity << " " << force << std::endl;
   std::cout << velocity * force << std::endl;
+
+  const Vector3<double> a = {2,3,4};
+  const Vector3<double> b = {5,6,7};
+  std::cout << a.cross(b) << std::endl;
   return 0;
 }

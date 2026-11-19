@@ -17,7 +17,7 @@ namespace vaos::numerics
   public:
     /// @author Corvaos
     /// @brief Sets a seed for the random number generator, establishing a fixed pattern of pseudo-random numbers
-    /// @param seed: lower bound
+    /// @param seed: the internal starting value
     static void seed(const unsigned int seed)
     {
       mt.seed(seed);
@@ -26,7 +26,6 @@ namespace vaos::numerics
     /// @author Corvaos
     /// @brief Generates a pseudo-random value from 0 to max
     /// @param max: upper bound
-    /// @returns A pseudo-random long between 0 and max
     static long random(const unsigned long max)
     {
       mt.discard(1);
@@ -37,7 +36,6 @@ namespace vaos::numerics
     /// @brief Generates a pseudo-random value from min to max
     /// @param min: lower bound
     /// @param max: upper bound
-    /// @returns A pseudo-random long between min and max
     static long random(const unsigned long min, const unsigned long max)
     {
       mt.discard(1);

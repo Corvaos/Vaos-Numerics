@@ -58,8 +58,7 @@ namespace vaos::numerics
 
     // -------------------- CONVERSIONS --------------------
     /// @author Corvaos
-    /// @brief Converts the value to a string
-    /// @return Value as a string
+    /// @brief Outputs the value as a string
     [[nodiscard]] std::string toString() const
     {
       return std::to_string(value);

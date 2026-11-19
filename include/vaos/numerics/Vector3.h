@@ -93,10 +93,18 @@ namespace vaos::numerics
       return result / result.length();
     }
 
+    [[nodiscard]] Vector3 cross(Vector3<T> a) const
+    {
+      return {
+        y * a.z - z * a.y,
+        z * a.x - x * a.z,
+        x * a.y - y * a.x
+      };
+    }
+
     // -------------------- SCALAR OPERATIONS --------------------
     /// @author Corvaos
     /// @brief Solves for the length using Pythagorean Theorem
-    /// @return Length of the vector
     [[nodiscard]] T length() const
     {
       return static_cast<T>(std::sqrt(static_cast<double>(squareLength())));
@@ -104,7 +112,6 @@ namespace vaos::numerics
 
     /// @author Corvaos
     /// @brief Solves for the square of the length using Pythagorean Theorem
-    /// @return Squared length of the vector
     [[nodiscard]] T squareLength() const
     {
       return x * x + y * y + z * z;
@@ -113,7 +120,6 @@ namespace vaos::numerics
     /// @author Corvaos
     /// @brief Solves for the dot product of the original and another vector
     /// @param a Other Vector3 to dot product against
-    /// @return Scalar value of dot product
     [[nodiscard]] T dot(const Vector3& a) const
     {
       return x * a.x + y * a.y + z * a.z;
